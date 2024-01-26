@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--
+   Filename: shakespeare.html
+   Author:   Michael Grzesina (grzesinam)
+   Date:     2023-01-19
+   Purpose:  Apply DOM selectors and event handlers
+   -->
+    <title>Quote Shakespeare</title>
+    <script>
+        const quotesArray = [ "Alas, poor Yorick", "Sit you down, father; rest you", "Lay on, MacDuff",
+                "To be or not to be" ];
+
+        window.onload = init;
+
+
+        /**
+         * Selects the button from the web page and adds the quote function to the button's onclick handler.
+         * To be called when the window is loaded (so the button exists).
+         */
+        function init() {
+            const button = document.getElementById("btnQuote");
+            button.onclick = quote;
+
+            button.onmouseover = changeStyles;
+            button.onmouseout = changeStylesBack;
+
+            document.querySelector("p").onmouseenter = changeStyles;
+            document.querySelector("p").onmouseleave = changeStylesBack;
+        }
+
+
+        /**
+         * Selects a random element from quotesArray and changes the text of the first paragraph to that quote.
+         */
+        function quote() {
+            // document.querySelector("p").innerHTML = "Sit you down, father; rest you";
+            const randomElement = Math.floor(Math.random() * quotesArray.length);
+            document.querySelector("p").innerHTML = quotesArray[randomElement];
+        }
+
+
+        /**
+         * Changes certain styles of the invoking object
+         */
+        function changeStyles() {
+            //document.getElementById("btnQuote").style.backgroundColor = "red";
+            this.style.backgroundColor = "red";
+            this.style.textTransform = "uppercase";
+            this.style.fontFamily = "fantasy";
+        }
+
+
+        /**
+         * Resets changes to certain styles of the invoking object
+         */
+        function changeStylesBack() {
+            //document.getElementById("btnQuote").style.backgroundColor = "";
+            this.style.backgroundColor = "";
+            this.style.textTransform = "";
+            this.style.fontFamily = "";
+        }
+    </script>
+</head>
+<body>
+<p id="firstPara">This is the text to be replaced</p>
+<p>
+    <button id="btnQuote">Quote Shakespeare</button>
+<!-- or <input id="btnQuote" type="button" value="Quote Shakespeare" />-->
+</p>
+</body>
+</html>

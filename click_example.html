@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--
+   Filename: click_example.html
+   Author:   Michael Grzesina (grzesinam)
+   Date:     2023-01-17
+   Purpose:  Experiment with event handlers
+   -->
+    <title>Event Handlers</title>
+    <script>
+        let clickCount = 0;
+
+        /**
+         * Adds one to a counter and displays the counter in a dialog box.
+         */
+        function updateCounter() {
+            clickCount++;
+            debugger;
+            window.alert('Clicks: ' + clickCount);
+        }
+    </script>
+</head>
+<body>
+    <h1>Event Handlers</h1>
+
+    <p>
+        <input type="button" value="Click Me!" id="btnClick" />
+<!--                onclick="updateCounter();" />-->
+<!--                onclick="clickCount++; window.alert('Clicks: ' + clickCount);" />-->
+    </p>
+
+    <script>
+        //document.getElementById("btnClick").onclick = updateCounter;
+        document.getElementById("btnClick").addEventListener("click", updateCounter);
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Date (?) entry</title>
+    <script>
+        "use strict";
+
+        const weekday = window.prompt("Enter a day of the week", "Tuesday");
+        const year = window.prompt("Enter a year", "2023");
+        const month = window.prompt("Enter a month name", "January");
+        const day = window.prompt("Enter a day of the month", "");
+    </script>
+</head>
+<body>
+<p id="output"></p>
+
+<script>
+    "use strict";
+
+    /* note that there is no verification that the user enters a valid date, or even a date! */
+
+    const fullDate = weekday + ", " + month + " " + day + ", " + year;
+    document.getElementById("output").innerHTML = "Is " + fullDate + " a valid date?";
+</script>
+</body>
+</html>

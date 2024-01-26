@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--
+   Filename: guess.html
+   Author:   Michael Grzesina (grzesinam)
+   Date:     2023-01-24
+   Purpose:  Practice timers with a number guessing game
+   -->
+    <title>Number Guessing Game</title>
+</head>
+<script>
+    const TIMEOUT_LENGTH = 250;
+    let myNumber = Math.floor(Math.random() * 100) + 1;
+    let numPeriods = 0;
+
+    window.onload = init;
+
+
+    function init() {
+        document.getElementById("btnCheck").onclick = checkGuess;
+    }
+
+
+    function checkGuess() {
+        document.getElementById("message").innerHTML = "Your guess is ";
+        setTimeout(displayResult, TIMEOUT_LENGTH);
+        document.getElementById("btnCheck").disabled = true;
+    }
+
+
+    function displayResult() {
+        numPeriods++;
+        if (numPeriods <= 5) {
+            document.getElementById("message").innerHTML += ". ";
+            setTimeout(displayResult, TIMEOUT_LENGTH);
+        }
+        else {
+            let guess = parseFloat(document.getElementById("numGuess").value);
+            let result = "ABSOLUTELY RIGHT!";
+            if (guess < myNumber) {
+                result = "TOO LOW!";
+            }
+            else if (guess > myNumber) {
+                result = "TOO HIGH!";
+            }
+            else if (Number.isNaN(guess)) {
+                result = "NOT VALID!";
+            }
+            document.getElementById("message").innerHTML += result;
+            numPeriods = 0;
+            document.getElementById("btnCheck").disabled = false;
+        }
+    }
+</script>
+<body>
+<h1>I have picked a number from 1 to 100. Try to guess it!</h1>
+
+<p>
+    <label for="numGuess">Your guess:</label>
+    <input type="number" id="numGuess" min="1" max="100" step="1" />
+    <input type="button" id="btnCheck" value="Check my guess!" />
+</p>
+
+<h1 id="message"></h1>
+</body>
+</html>

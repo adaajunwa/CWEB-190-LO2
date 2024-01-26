@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--
+   Filename: array_methods.html
+   Author:   Michael Grzesina (grzesinam)
+   Date:     2023-01-26
+   Purpose:  Examples of array methods and anonymous functions
+   -->
+    <title>Array Methods</title>
+    <script>
+        "use strict";
+        
+        // Global code - executed immediately as it is encountered
+        // Variable declaration - sample array of numbers
+        const arValues = [1, 30, 24, 2, 3, 11];
+
+        // Sort the array by default sorting method
+        arValues.sort();
+
+        // window.onload anonymous function - code in function is only executed when window is loaded
+        window.onload = function() {
+            document.getElementById("output").innerHTML = "<p>The array sorted by default is: "
+                    + arValues + "</p>";
+
+            arValues.sort(sortAscending); // sortAscending is a callback function
+            document.getElementById("output").innerHTML += "<p>The array sorted in ascending order is: "
+                    + arValues + "</p>";
+
+            // arValues.sort(function(a, b) {
+            //     return b - a;
+            // }); // anonymous function used as callback function
+            // arValues.sort((a, b) => { return b - a; }); // using an arrow function - same as above
+            arValues.sort((a, b) => b - a); // using an arrow function with just the return value
+            document.getElementById("output").innerHTML += "<p>The array sorted in descending order is: "
+                + arValues + "</p>";
+
+            // const filteredArray = arValues.filter(function(item) {
+            //     return item >= 10;
+            // });
+            const filteredArray = arValues.filter( item => (item >= 10) ); // arrow function with 1 parameter
+            document.getElementById("output").innerHTML += "<p>The filtered array: " + filteredArray + "</p>";
+
+            const mappedArray = arValues.map(function(item) {
+                return item * 2;
+            });
+            document.getElementById("output").innerHTML += "<p>The mapped array: " + mappedArray + "</p>";
+
+            document.querySelector("h1").onclick = function() {
+                document.getElementById("output").innerHTML = "DONE LEARNING OUTCOME 2!"
+            };
+        };
+
+
+        /**
+         * Returns positive if a > b, negative if a < b, and zero if a = b.
+         * Can be used as a callback function for the array sort method.
+         * @param a     First value to compare
+         * @param b     Second value to compare
+         * @returns {number}    Result of comparing values, a - b
+         */
+        function sortAscending(a, b) {
+            return a - b;
+        }
+    </script>
+</head>
+<body>
+<h1>Array Methods</h1>
+<section id="output"></section>
+</body>
+</html>

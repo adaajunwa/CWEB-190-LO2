@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Display a name and age</title>
+    <script>
+        "use strict";
+
+        let name = window.prompt("Enter your name", "Santa");
+        const age = window.prompt("Enter your age");
+    </script>
+</head>
+<body>
+<script>
+    "use strict";
+
+    name = name.toUpperCase();
+    document.write("<p>" + name + " is " + age + " years old.</p>");
+</script>
+
+<p id="output"></p>
+
+<script>
+    "use strict";
+
+    document.getElementById("output").innerHTML = name + " is " + age + " years old.";
+</script>
+</body>
+</html>

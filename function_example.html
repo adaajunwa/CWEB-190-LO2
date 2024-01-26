@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--
+   Filename: function_example.html
+   Author:   Michael Grzesina (grzesinam)
+   Date:     2023-01-17
+   Purpose:  Example of creating functions in JavaScript
+   -->
+    <title>Function Example</title>
+    <script>
+        //"use strict";
+
+        function addUs(value1, value2) {
+            // return value1 + value2;
+            total = value1 + value2; // a local variable because of var total below
+            myName = "Mike";
+
+            var total;
+
+            return total;
+        }
+
+
+        function addUs2(value1, value2) {
+            total = value1 + value2; // changes the global variable, so we don't need a return statement
+        }
+    </script>
+</head>
+<body>
+    <h1>Function Examples</h1>
+
+    <script>
+        "use strict";
+        let total = 100;
+
+        window.alert("The result of adding 5 and 6 is: " + addUs(5, 6));
+        window.alert("After calling addUs, total is: " + total);
+        addUs2(7, 8);
+        window.alert("After calling addUs2, total is: " + total);
+        window.alert(myName);
+    </script>
+</body>
+</html>

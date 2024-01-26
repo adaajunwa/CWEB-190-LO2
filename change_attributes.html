@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--
+   Filename: change_attributes.html
+   Author:   Michael Grzesina (grzesinam)
+   Date:     2023-01-19
+   Purpose:  Demonstrate changing attributes using JavaScript
+   -->
+    <title>Changing attributes</title>
+</head>
+<body>
+<p>
+    <img src="images/ron.jpg" alt="CST Staff" />
+</p>
+<p>
+    <input type="button" value="Click me!" id="btnClick" />
+</p>
+<script>
+    /**
+     * Changes the source of the first image in the web page and disables btnClick.
+     */
+    function change() {
+        document.querySelector("img").src = "images/mike.webp";
+        document.getElementById("btnClick").disabled = true;
+    }
+
+    document.getElementById("btnClick").onclick = change;
+</script>
+</body>
+</html>
