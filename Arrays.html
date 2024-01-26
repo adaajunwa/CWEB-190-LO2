@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict"
+    /*let ar = new Array(3);//array with 3 undefined elements
+     for (let i = 0; i < ar.length; i++) {
+         document.write(ar[i]+ "<br>")
+    }
+    let br = new Array(); //no elements
+    for (let i = 0; i < br.length; i++) {
+        document.write(br[i]+ "<br>")
+    }*/
+
+    let cr = new Array("Hello", 42, true); //array with 3 defined elements
+    for (let i = 0; i <= cr.length; i++) {
+        document.write(cr[i]+ "<br>")
+    }
+cr[4] = 7
+    document.write(cr[4]+ "<br>")
+    //you can also iterate through array object with this for statement
+    let item;
+    for( item in cr){
+        document.write(cr[item]+ "<br>")
+    }
+</script>
+</body>
+</html>

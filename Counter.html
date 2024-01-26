@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="output"> </p>
+<input type ="button" value = "Click me" id="btnStart"/>
+<script>
+    let ar = ["one", "two", "three", 4] //Array declared
+    let i = -1; //initialized counter variable
+
+    //call function startTimer on the button's click event
+    document.getElementById("btnStart").onclick = startTimer;
+
+
+    //Function startTimer, call outputElement function in the timer, and disabled the button
+    function startTimer() {
+        setTimeout(outputElement, 1000)
+        document.getElementById("btnStart").disabled = true;
+    }
+
+    //Function outputElement
+    function outputElement() {
+        i++ //increment i
+        if (i < ar.length){ //if i is less than array length
+            //output element[i] to paragraph element
+            document.getElementById("output").innerHTML +=(ar[i]+ "<br>")
+            setTimeout(outputElement, 1000);//call outputElement function in the timer
+        }
+    }
+
+</script>
+</body>
+</html>

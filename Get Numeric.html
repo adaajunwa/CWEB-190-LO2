@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict"
+//isNaN sees all numeric values as false and non-numeric as true
+    //isNaN also sees null values as false (which is wrong)
+    //However parseInt sees null values as NaN
+    //And isNaN sees NaN value as true
+    // so isNaN( parseInt( null ) will resolve to true
+    //the ! operator transforms true to false and vice versa
+    let input = window.prompt("Input any value")
+            console.log(!isNaN( input ))
+
+     //console.log(parseInt( input ))
+    console.log(!isNaN( parseInt( input )))
+
+    //The first part of the if condition !isNaN( input )
+    //resolves to true when a numeric value is passed
+    //and the second part !isNaN( parseInt( input )
+
+
+  if (!isNaN( input ) && !isNaN( parseInt( input ) )){
+      document.write ("Value is numeric")
+       }
+  else {
+      document.write ("Value is not a number")
+  }
+</script>
+</body>
+</html>

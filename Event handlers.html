@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="Click Me!" id="btnClick"
+        />
+<input type="text" value="" id="txtVal"/>
+<p id = "pTxt"> </p>
+<script>
+    function test(){
+        let result =  8+2
+        document.write('The number is '+ result)
+    }
+
+    //Another way of using event handler
+    //document.getElementById("btnClick").onclick = test;
+
+    //same as above
+   /*let btnElement = document.getElementById("btnClick")
+        btnElement.onclick = test;*/
+    //Yet another way of using event handler
+    //document.getElementById("btnClick").addEventListener ("click", test);
+
+    //Using text box values in event handlers
+    document.getElementById("btnClick").onclick = textValue;
+
+    function textValue(){
+   let txt =  document.getElementById("txtVal")
+      let p =   document.getElementById("pTxt")
+    p.innerHTML = "You entered "+ txt.value
+        txt.style.color = "red"
+        txt.style.backgroundColor ="purple"
+        p.style.color = "blue"
+   }
+
+</script>
+</body>
+</html>

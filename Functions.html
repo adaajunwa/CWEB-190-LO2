@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//Create function without parameters
+/*function test(){
+return "Hi"
+}
+document.write(test)
+document.write("<br>" +test())*/
+
+//Create function with parameters
+function test2(arg1, arg2){
+    return arg1 * arg2
+}
+//document.write("<br>" + test2)
+document.write("<br>" +test2(2, 7))
+
+//This is the same as Function test2
+//It uses the arrow function syntax
+    test3 = (arg1, arg2) => {
+        return arg1 * arg2
+}
+document.write("<br>" +test3(2, 10))
+
+//This is also the same as Function test2
+//It uses the anonymous function syntax (function has no name)
+let test4 = function(arg1, arg2) {
+    return arg1 * arg2
+};
+document.write("<br>" +test4(4, 12))
+</script>
+</body>
+</html>
